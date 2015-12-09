@@ -1,0 +1,66 @@
+name: Instagram
+version: 1.0.0
+description: "**Instagram** is a simple plugin that includes Instagram feed to your Grav website."
+icon: instagram
+author:
+  name: Igor Buyanov
+  email: artifex404@hotmail.com
+  url: https://github.com/artifex404/grav-plugin-instagram
+homepage: https://github.com/artifex404/grav-plugin-instagram
+keywords: instagram
+bugs: https://github.com/artifex404/grav-plugin-instagram/issues
+license: MIT
+
+dependencies:
+  - github: https://github.com/artifex404/grav-plugin-instagram.git
+
+form:
+  validation: loose
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    feed_parameters:
+      type: section
+      title: Feed Parameters
+      underline: true
+      fields:
+
+        feed_parameters.count:
+          type: text
+          size: small
+          label: Amount of feed items to show
+          placeholder: "Defaults to 7"
+          default: 7
+          validate:
+            type: number
+            min: 1
+            max: 65535
+
+        feed_parameters.user_id:
+          type: text
+          size: medium
+          label: User id
+          help: Enter your Instagram user id
+          placeholder: "user id"
+          default: ''
+          validate:
+            type: string
+
+        feed_parameters.client_id:
+          type: text
+          size: medium
+          label: Client id
+          help: Enter your Instagram client id
+          placeholder: "client id"
+          default: ''
+          validate:
+            type: string
