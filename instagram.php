@@ -4,6 +4,7 @@ namespace Grav\Plugin;
 use Grav\Common\Plugin;
 use Grav\Common\Data\Data;
 use Grav\Common\Page\Page;
+use Grav\Common\Utils;
 
 class InstagramPlugin extends Plugin
 {
@@ -64,7 +65,7 @@ class InstagramPlugin extends Plugin
 
         // Fetch data from API
         $url = 'https://api.instagram.com/v1/users/' . $config->get('feed_parameters.user_id') .'/media/recent/?client_id=' . $config->get('feed_parameters.client_id');
-        $data = $this->fetchData($url);
+        $data = Response::get($url);
         $this->parseResponse($data);
 
         $this->template_vars = [
@@ -77,29 +78,6 @@ class InstagramPlugin extends Plugin
         $output = $this->grav['twig']->twig()->render($this->template_html, $this->template_vars);
 
         return $output;
-    }
-
-    /**
-     * Perform a curl request to the Instagram API
-     * @param $url
-     *
-     * @return bool|mixed The response from the API
-     */
-    private function fetchData($url) {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($ch, CURLOPT_TIMEOUT, 20);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-
-        $content = curl_exec($ch);
-        $response_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-        curl_close($ch);
-
-        if ($response_code == 200) {
-            return $content;
-        }
-        return false;
     }
 
     private function addFeed($result) {
