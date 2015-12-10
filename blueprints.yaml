@@ -11,9 +11,6 @@ keywords: instagram
 bugs: https://github.com/artifex404/grav-plugin-instagram/issues
 license: MIT
 
-dependencies:
-  - github: https://github.com/artifex404/grav-plugin-instagram.git
-
 form:
   validation: loose
   fields:
