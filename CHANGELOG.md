@@ -1,5 +1,5 @@
 # v1.0.1
-## 12/09/2015
+## 14/09/2015
 
 1. [](#bugfix)
     * Remove unneeded class dependency
