@@ -39,7 +39,6 @@ class InstagramPlugin extends Plugin
      */
     public function onTwigInitialized()
     {
-        require_once __DIR__ . '/classes/Twig/InstagramTwigExtension.php';
         $this->grav['twig']->twig->addFunction(new \Twig_SimpleFunction('instagram_feed', [$this, 'getFeed']));
     }
 
