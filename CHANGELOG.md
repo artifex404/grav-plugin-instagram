@@ -1,3 +1,9 @@
+# v1.0.2
+## 14/09/2015
+
+1. [](#bugfix)
+    * Fix Response class path
+
 # v1.0.1
 ## 14/09/2015
 

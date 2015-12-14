@@ -4,7 +4,7 @@ namespace Grav\Plugin;
 use Grav\Common\Plugin;
 use Grav\Common\Data\Data;
 use Grav\Common\Page\Page;
-use Grav\Common\Utils;
+use Grav\Common\GPM;
 
 class InstagramPlugin extends Plugin
 {
