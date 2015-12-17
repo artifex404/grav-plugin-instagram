@@ -1,0 +1,5 @@
+{
+  "require": {
+    "phpfastcache/phpfastcache": "^3.0"
+  }
+}
