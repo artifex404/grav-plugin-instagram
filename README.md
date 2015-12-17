@@ -24,11 +24,17 @@ You should now have all the plugin files under
 
 # Configuration
 
-You need to set your Instagram API's *user_id* and *client_id* for this plugin to work. In your Grav Administration panel, go to Plugins > Instagram and set those values.
+You need to provide few configurations in order for the feed show up. In your Grav Administration panel, go to Plugins > Instagram to view the plugin configuration page.
+
+Enter the Instagram *user_id* whose feed you want to show, and your Instagram API *access_token*.
+
+Note, that your access token needs to have the public_content scope authorized.
+
+For more information how to get user_id or access_token, see the [Instagram API documentation](https://www.instagram.com/developer/).
 
 # Customization
 
-To customize how the Instagram feed looks like, you might want to customize its markup. To do that, copy the template file [instagram.html.twig](templates/partials/instagram.html.twig) to your `templates/partials` folder of your theme. For example:
+To customize how the your feed looks like, you might want to customize the generated markup. To do that, copy the template file [instagram.html.twig](templates/partials/instagram.html.twig) to your `templates/partials` folder of your theme. For example:
 
 ```
 /your/site/grav/user/themes/custom-theme/templates/partials/instagram.html.twig
@@ -38,7 +44,7 @@ It will now override the default markup of the feed. You can tweak it however yo
 
 # Config Defaults
 
-If you need to change default values, then the best process is to copy the [instagram.yaml](instagram.yaml) file into your `users/config/plugins/` folder (create it if it doesn't exist), and then modify there. This will override the default settings.
+If you need to override some plugin default values, the best practise is to copy the [instagram.yaml](instagram.yaml) file into your `users/config/plugins/` folder (create it if it doesn't exist), and then modify there. This will override the default settings.
 
 # Usage
 
