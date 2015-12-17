@@ -1,3 +1,10 @@
+# v1.1.0
+## 12/17/2015
+
+1. [](#bugfix #features)
+    * Adds feed caching
+    * Use Instagram API access_token instead of user_id
+
 # v1.0.2
 ## 12/14/2015
 

@@ -10,6 +10,8 @@ class InstagramPlugin extends Plugin
 {
     private $template_html = 'partials/instagram.html.twig';
     private $template_vars = [];
+    private $cache;
+    const HOUR_IN_SECONDS = 3600;
 
     /**
      * Return a list of subscribed events.
@@ -62,10 +64,37 @@ class InstagramPlugin extends Plugin
         /** @var Data $config */
         $config = $this->mergeConfig($page, TRUE);
 
-        // Fetch data from API
-        $url = 'https://api.instagram.com/v1/users/' . $config->get('feed_parameters.user_id') .'/media/recent/?client_id=' . $config->get('feed_parameters.client_id');
-        $data = Response::get($url);
-        $this->parseResponse($data);
+        // Autoload composer components
+        require __DIR__ . '/vendor/autoload.php';
+
+        // Set up cache settings
+        $cache_config = array(
+            "storage"   =>  "files",
+            "default_chmod" => 0777,
+            "fallback" => "files",
+            "securityKey" => "auto",
+            "htaccess" => true,
+            "path" => __DIR__ . "/cache"
+        );
+
+        // Init the cache engine
+        $this->cache = phpFastCache("files", $cache_config);
+
+        // Generate API url
+        $url = 'https://api.instagram.com/v1/users/' . $config->get('feed_parameters.user_id') .'/media/recent/?access_token=' . $config->get('feed_parameters.access_token');
+
+        // Get the cached results if available
+        $results = $this->cache->get($url);
+
+        // Get the results from the live API, cached version not found
+        if ($results === null) {
+            $results = Response::get($url);
+
+            // Cache the results
+            $this->cache->set($url, $results, InstagramPlugin::HOUR_IN_SECONDS * $config->get('feed_parameters.cache_time')); // Convert hours to seconds
+        }
+
+        $this->parseResponse($results);
 
         $this->template_vars = [
             'user_id'   => $config->get('feed_parameters.user_id'),
