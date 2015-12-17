@@ -1,5 +1,5 @@
 name: Instagram
-version: 1.0.2
+version: 1.1.0
 description: "**Instagram** is a simple plugin that includes Instagram feed to your Grav website."
 icon: instagram
 author:
@@ -42,22 +42,33 @@ form:
             min: 1
             max: 65535
 
+        feed_parameters.cache_time:
+          type: text
+          size: small
+          label: Hours to cache the feed
+          placeholder: "Defaults to 1"
+          default: 1
+          validate:
+            type: number
+            min: 1
+            max: 65535
+
         feed_parameters.user_id:
           type: text
-          size: medium
+          size: small
           label: User id
-          help: Enter your Instagram user id
+          help: Instagram user id whose feed will be shown
           placeholder: "user id"
           default: ''
           validate:
             type: string
 
-        feed_parameters.client_id:
+        feed_parameters.access_token:
           type: text
-          size: medium
-          label: Client id
-          help: Enter your Instagram client id
-          placeholder: "client id"
+          size: large
+          label: Access token
+          help: Instagram API access token
+          placeholder: "access token"
           default: ''
           validate:
             type: string
