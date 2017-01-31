@@ -1,24 +1,31 @@
+# v1.2.0
+## 01/31/2017
+
+* [New Feature] Add more info from the Instagram API
+
+
+# v1.1.1
+## 02/13/2016
+
+* [Bug Fix] Fix the template to show the latest feed image
+
 # v1.1.0
 ## 12/17/2015
 
-1. [](#bugfix #features)
-    * Adds feed caching
-    * Use Instagram API access_token instead of user_id
+* [New Feature] Adds feed caching
+* [Bug Fix] Use Instagram API access_token instead of user_id
 
 # v1.0.2
 ## 12/14/2015
 
-1. [](#bugfix)
-    * Fix Response class path
+* [Bug Fix] Fix Response class path
 
 # v1.0.1
 ## 12/14/2015
 
-1. [](#bugfix)
-    * Remove unneeded class dependency
+* [Bug Fix] Remove unneeded class dependency
 
 # v1.0
 ## 12/09/2015
 
-1. [](#new)
-    * ChangeLog started...
+* [Bug Fix] ChangeLog started
