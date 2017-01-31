@@ -129,6 +129,9 @@ class InstagramPlugin extends Plugin
                 $r[$created_at]['thumb'] = $val['images']['low_resolution']['url'];
                 $r[$created_at]['user'] = $val['user']['full_name'];
                 $r[$created_at]['link'] = $val['link'];
+                $r[$created_at]['comments'] = $val['comments']['count'];
+                $r[$created_at]['likes'] = $val['likes']['count'];
+                $r[$created_at]['type'] = $val['type'];
             }
             $this->addFeed($r);
         }
