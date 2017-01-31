@@ -123,14 +123,14 @@ class InstagramPlugin extends Plugin
         if (count($content['data'])) {
             foreach ($content['data'] as $key => $val) {
                 $created_at = $val['created_time'];
-				$r[$created_at]['time'] = $created_at;
+                $r[$created_at]['time'] = $created_at;
                 $r[$created_at]['text'] = $val['caption']['text'];
                 $r[$created_at]['image'] = $val['images']['standard_resolution']['url'];
                 $r[$created_at]['thumb'] = $val['images']['low_resolution']['url'];
                 $r[$created_at]['user'] = $val['user']['full_name'];
                 $r[$created_at]['link'] = $val['link'];
                 $r[$created_at]['comments'] = $val['comments']['count'];
-				$r[$created_at]['likes'] = $val['likes']['count'];
+                $r[$created_at]['likes'] = $val['likes']['count'];
                 $r[$created_at]['type'] = $val['type'];
             }
             $this->addFeed($r);
