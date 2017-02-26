@@ -1,6 +1,6 @@
 # Grav Instagram Plugin
 
-`Instagram` is a simple [Grav][grav] Plugin that includes your Instagram feed to your Grav website.
+`Instagram` is a simple [Grav](https://getgrav.org) Plugin that includes your Instagram feed to your Grav website.
 
 # Installation
 
