@@ -81,7 +81,7 @@ class InstagramPlugin extends Plugin
         $this->cache = phpFastCache("files", $cache_config);
 
         // Generate API url
-        $url = 'https://api.instagram.com/v1/users/' . $config->get('feed_parameters.user_id') .'/media/recent/?access_token=' . $config->get('feed_parameters.access_token');
+        $url = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' . $config->get('feed_parameters.access_token');
 
         // Get the cached results if available
         $results = $this->cache->get($url);
