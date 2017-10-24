@@ -1,3 +1,8 @@
+# v1.2.1
+## 10/24/2017
+
+* [Bux Fix] Fix page not found error
+
 # v1.2.0
 ## 01/31/2017
 
