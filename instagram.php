@@ -126,11 +126,11 @@ class InstagramPlugin extends Plugin
                 $r[$created_at]['time'] = $created_at;
                 $r[$created_at]['text'] = $val['caption']['text'];
                 $r[$created_at]['image'] = $val['images']['standard_resolution']['url'];
-                $r[$created_at]['image_w'] = $val['images']['standard_resolution']['width'];
+                $r[$created_at]['image_width'] = $val['images']['standard_resolution']['width'];
                 $r[$created_at]['thumb'] = $val['images']['low_resolution']['url'];
-                $r[$created_at]['thumb_w'] = $val['images']['low_resolution']['width'];
+                $r[$created_at]['thumb_width'] = $val['images']['low_resolution']['width'];
                 $r[$created_at]['micro'] = $val['images']['thumbnail']['url'];
-                $r[$created_at]['micro_w'] = $val['images']['thumbnail']['width'];
+                $r[$created_at]['micro_width'] = $val['images']['thumbnail']['width'];
                 $r[$created_at]['user'] = $val['user']['full_name'];
                 $r[$created_at]['link'] = $val['link'];
                 $r[$created_at]['comments'] = $val['comments']['count'];
