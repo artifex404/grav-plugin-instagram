@@ -63,3 +63,17 @@ This will be converted into your Instagram feed as follows:
     ...
 </ul>
 ```
+
+You can also pass in twig variables, such as a custom class.
+
+```
+{{ instagram_feed({custom_class: 'someclass'}) }}
+```
+
+This will be accessible in the `partials/instagram.html.twig` as a property of a `params` variable. For example:
+
+```
+{% for post in feed|slice(0, count)  %}
+    <li class="{{ params.custom_class }}"><a href="{{ post.link }}" target="_blank"><img src="{{ post.image }}" alt=""></a></li>
+{% endfor %}
+```

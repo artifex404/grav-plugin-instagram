@@ -100,7 +100,8 @@ class InstagramPlugin extends Plugin
             'user_id'   => $config->get('feed_parameters.user_id'),
             'client_id' => $config->get('feed_parameters.client_id'),
             'feed'      => $this->feeds,
-            'count'     => $config->get('feed_parameters.count')
+            'count'     => $config->get('feed_parameters.count'),
+            'params'    => $params
         ];
 
         $output = $this->grav['twig']->twig()->render($this->template_html, $this->template_vars);
