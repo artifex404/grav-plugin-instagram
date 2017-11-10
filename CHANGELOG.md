@@ -1,3 +1,8 @@
+# v1.3.0
+## 11/10/2017
+
+* [New Feature] Adds parameters to twig template 
+
 # v1.2.2
 ## 11/10/2017
 
