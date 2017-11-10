@@ -1,3 +1,9 @@
+# v1.2.2
+## 11/10/2017
+
+* [New Feature] Adds more info from the Instagram API
+* [New Feature] Limit feed item amount to 20 due to Instagram API restrictions
+
 # v1.2.1
 ## 10/24/2017
 
