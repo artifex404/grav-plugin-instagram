@@ -1,5 +1,5 @@
 {
   "require": {
-    "phpfastcache/phpfastcache": "^3.0"
+    "ext-json": "*"
   }
 }
